@@ -3,13 +3,15 @@
 {% block content %}
 <!-- post_detail.html -->
 <h1 class="text-center text-light">{{ car.title }}</h1>
+<h3 class="text-center text-light">Year: {{ car.year }}</h3>
+<h3 class="text-center text-light">Price: {{ car.price }}</h3>
 
 <div id="image-carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         {% for image in car.image_set.all %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <center>
-                  <img src="{{ image.image.url }}" class="d-block w-25" alt="Image">
+                  <img src="{{ image.image.url }}" class="d-block w-50" alt="Image">
                 </center>
             </div>
         {% endfor %}
