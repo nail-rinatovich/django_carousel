@@ -13,7 +13,10 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Car
     template_name = 'post_detail.html'
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['images'] = self.object.image_set.all()
+        return context
 
 class BlogCreateView(CreateView):
     model = Car

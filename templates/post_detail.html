@@ -8,7 +8,7 @@
 
 <div id="image-carousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-        {% for image in car.image_set.all %}
+        {% for image in images %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <center>
                   <img src="{{ image.image.url }}" class="d-block w-50" alt="Image">
